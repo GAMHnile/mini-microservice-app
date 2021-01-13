@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const PostCreate = (props) => {
-  const [title, setTitle] = useState("");
+const CommentCreate = ({ postId }) => {
+  const [content, setContent] = useState("");
   const onSubmit = (event) => {
     event.preventDefault();
-    axios.post("http://localhost:4000/posts", { title });
-    setTitle("");
+    axios.post(`http://localhost:4001/posts/${postId}/comments`, { content });
+    setContent("");
   };
   return (
     <div>
@@ -14,8 +14,8 @@ const PostCreate = (props) => {
         <div className="form-group">
           <label>Title</label>
           <input
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
             className="form-control"
           />
         </div>
@@ -25,4 +25,4 @@ const PostCreate = (props) => {
   );
 };
 
-export default PostCreate;
+export default CommentCreate;
