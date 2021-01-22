@@ -14,11 +14,11 @@ app.get("/posts", (req, res) => {
   res.send(posts);
 });
 
-app.post("/posts", (req, res) => {
+app.post("/posts/create", (req, res) => {
   const { title } = req.body;
   const id = randomBytes(4).toString("hex");
   posts[id] = { id, title };
-  axios.post("http://localhost:4005/events", {
+  axios.post("http://event-bus-srv:4005/events", {
     type: "PostCreated",
     data: { id, title },
   });
