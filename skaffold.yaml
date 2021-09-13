@@ -13,7 +13,7 @@ build:
     - image: gamhhnile/client
       context: client
       docker:
-        dockerfile: dockerfile
+        dockerfile: Dockerfile
       sync:
         manual:
           - src: 'src/**/*.js'
@@ -22,7 +22,7 @@ build:
     - image: gamhhnile/comments
       context: comments
       docker:
-        dockerfile: dockerfile
+        dockerfile: Dockerfile
       sync:
         manual:
           - src: '*.js'
@@ -31,7 +31,7 @@ build:
     - image: gamhhnile/event-bus
       context: event-bus
       docker:
-        dockerfile: dockerfile
+        dockerfile: Dockerfile
       sync:
         manual:
           - src: '*.js'
@@ -40,7 +40,7 @@ build:
     - image: gamhhnile/moderation
       context: moderation
       docker:
-        dockerfile: dockerfile
+        dockerfile: Dockerfile
       sync:
         manual:
           - src: '*.js'
@@ -49,7 +49,7 @@ build:
     - image: gamhhnile/posts
       context: posts
       docker:
-        dockerfile: dockerfile
+        dockerfile: Dockerfile
       sync:
         manual:
           - src: '*.js'
@@ -58,7 +58,7 @@ build:
     - image: gamhhnile/query
       context: query
       docker:
-        dockerfile: dockerfile
+        dockerfile: Dockerfile
       sync:
         manual:
           - src: '*.js'
